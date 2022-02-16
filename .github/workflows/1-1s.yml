@@ -47,7 +47,7 @@ jobs:
           git config --global user.name $GITHUB_ACTOR
           git checkout -b ${{ env.BRANCH_NAME }}
           git add .
-          git commit -m "Adding empty meeting notes for CW ${{ env.CW }} ${{env.REV}}"
+          git commit -m "Adding empty meeting notes for CW ${{ env.COMING_CALENDAR_WEEK }} ${{env.REV}}"
           git push --set-upstream "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ${{ env.BRANCH_NAME }}
 
       - name: Open a new pull request to be merged after we had our 1 on 1
