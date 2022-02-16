@@ -1,8 +1,8 @@
 name: 1-1-preparation
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 3 * * 1
+#  schedule:
+#    - cron: 0 3 * * 1
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
