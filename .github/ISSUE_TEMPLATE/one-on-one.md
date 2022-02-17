@@ -1,7 +1,7 @@
 ---
 name: One to one
 about: Notes for our 1:1s
-title: "1:1 - [DATE]"
+title: "1 on 1 - [DATE]"
 labels: "1on1"
 assignees: ""
 ---
@@ -13,26 +13,15 @@ assignees: ""
 - [ ] ☁️ Generally OK, except for...
 - [ ] 🌩 Feeling frustrated by...
 
-## Topics you want to cover in our 1 on 1
+## Sourcing the agenda for our next meeting
 - [ ] TODO
 
-## Tell me about last week.
-- [TODO]
+## Questions to think about
+- Tell me about last week.
+- What is frustrating, blocking, or confusing you?
+- What are your goals for the week?
+- What’s a recent situation you wish you handled differently? What would you change?
+- Do you have any feedback for me or your teammates?
 
-## What is frustrating, blocking, or confusing you?
-- [TODO]
 
-## What are your goals for the week?
-- [TODO]
-
-## What’s a recent situation you wish you handled differently? What would you change?
-- [TODO]
-
-## Do you have any feedback for me or your teammates?
-- [TODO]
-
-## Potential blockers?
-- [TODO]
-
-## Action Items
-- [ ] 
+Also have a look at the questions in this issue if they help to reflect this week. 
