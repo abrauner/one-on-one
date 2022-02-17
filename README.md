@@ -12,4 +12,6 @@ Every Friday, a GitHub action creates a PR within a a markdown file containing q
 
 1. [Create a new private repo from this template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template). (Tips: I always do this in my company's org so that it is not dependent on me or my employment. I make the repository name the IC's handle.)
 2. Update [these](https://github.com/abrauner/one-on-one/blob/main/.github/workflows/1-1s.yml#L60) two [lines](https://github.com/abrauner/one-on-one/blob/main/.github/workflows/1-1-questions.yaml#L27) to be your handle and the IC's handle. This will assign weekly PRs to both of you so that they show up in your notifications.
-3. Invite the IC to the repo as an admin so they have full editing/merging permissions.
+3. Remove the comments [here](https://github.com/abrauner/one-on-one/blob/main/.github/workflows/1-1s.yml#L4) and [here](https://github.com/abrauner/one-on-one/blob/main/.github/workflows/1-1-questions.yaml#L4) to enable scheduled actions. 
+4. Adjust the [cron-expression]( https://crontab.guru) to your needs. - The idea is that after you had your 1-on-1 you take a day to clean up your notes. The next day PRs and Issues will be automatically closed. The preparation for the next meeting starts with opening a new Issue and PR. 
+5. Invite the IC to the repo as an admin so they have full editing/merging permissions.
