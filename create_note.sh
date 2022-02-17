@@ -7,7 +7,8 @@ if [ -z "$(ls -A meeting-notes)" ]; then
 fi
 
 cat <<- EOF >> "${filename}"
-## 1 on 1 $NOW
+## 1 on 1 - $NOW
+-----
 
 ### Topics you want to cover in our 1 on 1
 - [TODO]
@@ -26,5 +27,8 @@ cat <<- EOF >> "${filename}"
 
 ### Do you have any feedback for me or your teammates?
 - [TODO]
+
+## Action Items
+- [ ] 
 
 EOF
