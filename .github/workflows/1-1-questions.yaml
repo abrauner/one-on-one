@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Set date to next week
-        run: echo "DATE=$(date --date="next week yesterday" +%F)" >> $GITHUB_ENV
+        run: echo "DATE=$(date --date="next week Monday" +%F)" >> $GITHUB_ENV
 
       - name: Checkout the repository to get the template
         uses: actions/checkout@v2
