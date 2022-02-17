@@ -1,8 +1,8 @@
 name: 1-1-preparation Issue questions
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: 0 3 * * 1  # Every monday at noon – https://crontab.guru
+  schedule:
+    - cron: 0 9 * * 2  # Every Tuesday at 9am. The idea is to create the new PR after we had our 1-on-1 on Monday. – https://crontab.guru
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -24,7 +24,7 @@ jobs:
         uses: imjohnbo/issue-bot@v2
         with:
           title: "1:1 for ${{ env.DATE }}"
-          assignees: "abrauner" # GitHub handles without the @
+          assignees: "abrauner" # GitHub handles without the @, Assign to both involved in the 1-on-1
           labels: "1on1"
           pinned: true
           close-previous: true
