@@ -40,26 +40,18 @@ jobs:
       - name: Create new meeting notes files
         run: ./create_note.sh
 
-      - name: Commit and push notes scaffold to branch
-        run: |
-          echo "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-          git config --global user.email $GITHUB_ACTOR@users.noreply.github.com
-          git config --global user.name $GITHUB_ACTOR
-          git checkout -b ${{ env.BRANCH_NAME }}
-          git add .
-          git commit -m "Adding empty meeting notes for CW ${{ env.COMING_CALENDAR_WEEK }} ${{env.REV}}"
-          git push --set-upstream "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ${{ env.BRANCH_NAME }}
-
-      - name: Open a new pull request to be merged after we had our 1 on 1
-        uses: repo-sync/pull-request@v2
+      - name: Create Pull Request and commit new files to a branch used in this PR
+        uses: peter-evans/create-pull-request@v3
         with:
-          source_branch: "${{ env.BRANCH_NAME }}"           # If blank, default: triggered branch
-          destination_branch: "main"                        # If blank, default: master
-          pr_title: "${{ env.BRANCH_NAME }}"
-          pr_body: ":crown: *An automated 1:1 PR*"          # Full markdown support, requires pr_title to be set
-          pr_assignee: "abrauner"                           # Comma-separated list (no spaces), Assign the PR to manager and engineer
-          pr_label: "automerge"                             # Comma-separated list (no spaces)
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Adding empty meeting notes for CW ${{ env.COMING_CALENDAR_WEEK }} ${{env.REV}}"
+          title: "${{ env.BRANCH_NAME }}"
+          body: ":crown: *An automated 1:1 PR*"
+          branch: "${{ env.BRANCH_NAME }}"
+          reviewers: "abrauner"
+          add-paths: "meeting-notes/*"
+          labels: |
+            automated
+            automerge
 
       - name: Clean up stale branches
         uses: "jessfraz/branch-cleanup-action@master"
