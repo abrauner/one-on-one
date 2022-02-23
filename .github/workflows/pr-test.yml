@@ -1,16 +1,13 @@
 name: Create a new PR and close only labled PRs
 on:
   workflow_dispatch:
-  
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
 jobs:
   pr-test:
     runs-on: ubuntu-latest
-    
     steps:
-    
       - name: Close existing PRs with a specific label
         uses: actions/github-script@v6
         with:
