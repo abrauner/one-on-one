@@ -1,6 +1,9 @@
 name: Create a new PR and close only labled PRs
 on:
   workflow_dispatch:
+#  schedule:
+#    - cron: 0 9 * * 1
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
