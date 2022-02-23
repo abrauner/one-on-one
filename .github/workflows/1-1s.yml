@@ -57,3 +57,27 @@ jobs:
         uses: "jessfraz/branch-cleanup-action@master"
         with:
           secrets: ${GITHUB_TOKEN}
+
+      - name: Create the issue
+        id: issue-bot
+        uses: imjohnbo/issue-bot@v2
+        with:
+          title: "1:1 for ${{ env.NOW }}"
+          assignees: "abrauner" # GitHub handle, assign to the employee to prepare for the next weeks 1-on-1
+          labels: "1on1"
+          pinned: true
+          close-previous: true
+          template: ".github/ISSUE_TEMPLATE/one-on-one.md" # assignees, labels will be overridden if present in YAML header
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate random questions
+        if: success()
+        uses: pierluigi/random-1on1-questions-action@v1.3
+        with:
+          issue-number: ${{ steps.issue-bot.outputs.issue-number }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Optional: ovverride these defaults
+          # num-categories: "3" # how many question categories
+          # num-questions: "1" # how many questions per category
+          # label: "1on1" # which label triggers this workflow
