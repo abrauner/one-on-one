@@ -28,8 +28,8 @@ jobs:
 
       - name: Set a couple of env variables we want to use
         run: |
-          echo "NOW=$(date --date="next week Monday" +%F)" >> $GITHUB_ENV
-          echo "BRANCH_NAME=$(date --date="next week Monday" +%F)_meeting_notes" >> $GITHUB_ENV
+          echo "NOW=$(date --date="next Monday" +%F)" >> $GITHUB_ENV
+          echo "BRANCH_NAME=$(date --date="next Monday" +%F)_meeting_notes" >> $GITHUB_ENV
           echo "COMING_CALENDAR_WEEK=$(date --date="next week" +%U)" >> $GITHUB_ENV
 
       - name: Create new branch for next 1-1 meeting
