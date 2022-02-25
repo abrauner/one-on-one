@@ -1,0 +1,7 @@
+inputs:
+  secrets:
+    description: 'Github-Secret to use the github api'
+    required: true
+  github-token:
+    description: 'Github-Secret to use the github api'
+    required: true
