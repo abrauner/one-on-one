@@ -17,5 +17,5 @@ jobs:
           script: |
             const prs = await github.pulls.list({owner: context.repo.owner, repo: context.repo.repo, state: 'open'})
             for (var pull of prs.data) {
-              console.log(pull):
+              console.log(pull);
             }
